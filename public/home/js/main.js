@@ -160,7 +160,8 @@ function addTr() {
         <td class="column1">${name}</td>
         <td class="column2">${quantity}</td>
         <td class="column3">${type}</td>
-        <td class="column6">${prix}</td>
+        <td class="column4">${prix}</td>
+        <td class="column4">${prix * quantity}</td>
         <td class="column6">
             <i class="fa fa-times" 
                 onclick='this.parentElement.parentElement.remove()'>
