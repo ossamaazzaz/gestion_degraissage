@@ -1,0 +1,107 @@
+@layout('layouts.admin')
+
+@section('main')
+<div class="page-wrapper">
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-primary">Dashboard</h3> </div>
+        <div class="col-md-7 align-self-center">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Acceuil</a></li>
+                <li class="breadcrumb-item active">Produits</li>
+            </ol>
+        </div>
+    </div>
+    <div class="card" style="margin: 10px;">
+        <div class="btn btn-success" onclick="showModal('update-category-modal')">+ Ajouter</div><br><br>
+
+        <div class="card-title">
+            <h2 style="text-align: center;">La liste des produits</h2>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prix peinture</th>
+                            <th>Prix lavage</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @each(product in products)
+                        <tr id="{{product._id}}">
+                            <td>{{product.name}}</td>
+                            <td>{{product.prixPent}}</td>
+                            <td>{{product.prixLav}}</td>
+                            <td class="tools">
+                                <i class="fa fa-times" onclick="deleteProduct('{{product._id}}')"></i>
+                                <i class="fa fa-pencil" onclick="showUpdateModal(this)"></i>
+                            </td>
+                        </tr>
+                        @endeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+</div>
+
+<div id="update-category-modal">
+        <form class="info-container" method="POST" action="/admin/products/add">
+            <span class="close-product-modal" onclick="hideModal('update-category-modal')">&times;</span>
+            <h2>Ajouter un produit</h2>
+            <hr>
+            <br><br>
+            <div class="form-group">
+                <label for="title" class="category-form-text">Nom du produit</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter a title" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="title" class="category-form-text">Prix de lavage</label>
+                <input type="number" class="form-control" name="prixLav" placeholder="Entrer un prix" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="title" class="category-form-text">Prix de Peinture</label>
+                <input type="number" class="form-control" name="prixPent" placeholder="Entrer un prix" required>
+            </div>
+            <div style="width: 100%; margin-top: 15px;">
+                <input type="submit" class="btn btn-success" value="ajouter">
+            </div>
+        </form>
+    </div>
+
+<div id="update-product-modal">
+    <form class="info-container" method="POST" action="/admin/products/update">
+        <span class="close-product-modal" onclick="hideModal('update-product-modal')">&times;</span>
+        <h2>Modifier un produit</h2>
+        <hr>
+        <br>
+        <input type="hidden" name="id" id="update-id">
+        <div class="form-group">
+        <label for="title" class="category-form-text">Nom du produit</label>
+        <input type="text" class="form-control" id="update-name"
+        name="name" placeholder="Enter a title" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="title" class="category-form-text">Prix de lavage</label>
+            <input type="number" class="form-control" id="update-prix-lav"
+            name="prixLav" placeholder="Entrer un prix" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="title" class="category-form-text">Prix de Peinture</label>
+            <input type="number" class="form-control" id="update-prix-pent"
+            name="prixPent" placeholder="Entrer un prix" required>
+        </div>
+        <div style="width: 100%; margin-top: 15px;">
+            <input type="submit" class="btn btn-success" value="Modifier">
+        </div>
+    </form>
+</div>
+@endsection

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Azzaz Tahar</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/home/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/home/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/home/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/home/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/home/vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/home/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/home/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	<div class="limiter">
+		<div class="container-table100">
+				<form autocomplete="off" style="display:table;margin-top:-200px;" onsubmit="addItem(event)">
+						<div class="autocomplete" style="width:300px;display:table-cell">
+						  <input id="myInput" type="text" name="myCountry" class="item-vals" 
+						  required placeholder="nom du produit">
+						</div>
+						<div style="display:table-cell;border-left: 1px solid;">
+							<input type="number" placeholder="quantité" class="item-vals" required value="1">
+						</div>
+						<div style="display:table-cell;border-left: 1px solid;">
+							<select id="type-product" class="form-control item-vals" required>
+								<option selected disabled>Type :</option> 
+								<option value="Lavage">lavage</option>
+								<option value="Peinture">peinture</option>
+							</select>
+							
+						</div>
+						<div style="display:table-cell">
+							<input type="submit" value="Ajouter">
+						</div>
+						
+					</form>
+			<div class="wrap-table100" style="margin-top: -550px">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Produit</th>
+								<th class="column2">Quantité</th>
+								<th class="column3">type</th>
+								<th class="column4">Prix</th>
+								<th class="column6"></th>
+							</tr>
+						</thead>
+						<tbody id="add-area">
+								<tr id="empty-tr">
+									<td class="column1"></td>
+									<td class="column2"></td>
+									<td class="column3"></td>
+									<td class="column6"></td>
+									<td class="column6">
+									</td>
+								</tr>
+						</tbody>
+					</table>
+				</div>
+            </div>
+            
+        </div>
+	</div>
+
+
+	
+
+<!--===============================================================================================-->	
+	<script src="/home/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/home/vendor/bootstrap/js/popper.js"></script>
+	<script src="/home/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/home/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/home/js/main.js"></script>
+
+</body>
+</html>
