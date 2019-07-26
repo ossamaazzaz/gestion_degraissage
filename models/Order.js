@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const OrderSchema = new mongoose.Schema({
     name: String,
-    number: String,
+    phone: String,
+    price: Number,
     paid: Number,
     toPay: Number,
     content: String,

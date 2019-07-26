@@ -72,10 +72,33 @@
 					</table>
 				</div>
             </div>
-		</center>
-        </div>
+		<br><br>
+			<form id="personal-info-form" onsubmit="addInfo(event)" method="POST" action="/seller/orders/add">
+				<h2>Personal info:</h2><br>
+				<input type="hidden" name="price" id="order-price">
+				<input type="hidden" name="content" id="order-content">
+				<div class="row">
+					<div class="col">
+						<input type="text" class="form-control" name="name" placeholder="Nom" required>
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" name="phone" placeholder="Numéro de téléphone" required>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col">
+						<input type="number" class="form-control" placeholder="Payé" name="paid">
+					</div>
+					<div class="col">
+						<input type="submit" class="form-control" value="Générer">
+					</div>
+				</div>
+			</form>
+			</center>
+		</div>
+		
 	</div>
-
+	
 
 	
 

@@ -351,3 +351,6 @@ input[type=submit] {
 .column6 i{
   font-size: 25px;
 }
+#personal-info-form{
+  width: 44%;
+}
