@@ -171,24 +171,22 @@ function addTr() {
     document.getElementById("add-area").innerHTML += tr;
 }
 //adding info to the form
-function addInfo(e) {
-    e.preventDefault();
+function addInfo() {
     var content = [];
     var trss = document.getElementsByTagName("tr");
     var totale = 0;
     for (let i = 1; i < trss.length; i++) {
         let tds = trss[i].children;
-        totale += tds[4].innerHTML;
+        totale += parseInt(tds[4].innerHTML);
         var line = {
             name: tds[0].innerHTML,
-            quantity: tds[1].innerHTML,
+            quantity: parseInt(tds[1].innerHTML),
             type: tds[2].innerHTML,
-            prix: tds[3].innerHTML,
-            totale: tds[4].innerHTML
+            prix: parseInt(tds[3].innerHTML),
+            totale: parseInt(tds[4].innerHTML)
         }
         content.push(line);
     }
-    console.log(content);
     document.getElementById("order-price").value = totale;
     document.getElementById("order-content").value = JSON.stringify(content);
 }
