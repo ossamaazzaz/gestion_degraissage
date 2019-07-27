@@ -8,7 +8,7 @@ const OrderSchema = new mongoose.Schema({
     toPay: Number,
     content: String,
     state: String,
-    created_at: { type: String, default: Date.now },
+    created_at: { type: Date, default: Date.now },
     ready_at: Date,
     restored_at: Date
 });

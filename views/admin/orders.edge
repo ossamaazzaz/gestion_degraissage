@@ -14,7 +14,7 @@
  </div>
 <div class="card" style="margin: 10px;">
                <div class="card-title">
-                   <h2 style="text-align: center;">Pending orders</h2>
+                   <h2 style="text-align: center;">Les commandes:</h2>
                </div>
                <div class="card-body">
                    <div class="table-responsive">
@@ -32,16 +32,26 @@
                                </tr>
                            </thead>
                            <tbody>
+                             @each(order in orders)
                                <tr>
-                                   <td>order._id</td>
-                                   <td>order.created_at</td>
-                                   <td>order.state</td>
-                                   <td>order.name</td>
-                                   <td>order.price</td>
-                                   <td>order.paid</td>  
-                                   <td>order.toPay</td>  
+                                   <td>{{order._id}}</td>
+                                   <td>{{order.created_at.toLocaleString()}}</td>
+                                   <td>
+                                     <div class="badge 
+                                     @if(order.state == 'to_prepare')
+                                      badge-warning
+                                     @endif
+                                     ">
+                                        {{order.state}}
+                                     </div>
+                                    </td>
+                                   <td>{{order.name}}</td>
+                                   <td>{{order.price}}</td>
+                                   <td>{{order.paid}}</td>  
+                                   <td>{{order.toPay}}</td>  
                                    <td>button</td>  
                                </tr>
+                            @endeach
 
                            </tbody>
                        </table>
