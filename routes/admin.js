@@ -10,7 +10,7 @@ const deleteProductController = require("../controllers/admin/deleteProduct");
 const updateProductController = require("../controllers/admin/updateProduct");
 
 //require middleware
-
+const isAdmin = require("../middleware/isAdmin");
 //handling requests 
 router.get("/", homeController);
 router.get("/products", productsController);

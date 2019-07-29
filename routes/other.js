@@ -13,5 +13,6 @@ router.get("/auth/login", (req, res) => {
 router.get("/", (req, res) => {
     res.redirect("/seller");
 });
+router.post("/auth/login", loginController);
 
 module.exports = router;
