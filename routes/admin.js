@@ -12,11 +12,11 @@ const updateProductController = require("../controllers/admin/updateProduct");
 //require middleware
 const isAdmin = require("../middleware/isAdmin");
 //handling requests 
-router.get("/", homeController);
-router.get("/products", productsController);
-router.get("/orders", ordersController);
-router.post("/products/add", addProductController);
-router.delete("/products/delete/:id", deleteProductController);
-router.post("/products/update", updateProductController);
+router.get("/", isAdmin, homeController);
+router.get("/products", isAdmin, productsController);
+router.get("/orders", isAdmin, ordersController);
+router.post("/products/add", isAdmin, addProductController);
+router.delete("/products/delete/:id", isAdmin, deleteProductController);
+router.post("/products/update", isAdmin, updateProductController);
 
 module.exports = router;
