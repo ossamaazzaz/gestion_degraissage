@@ -11,6 +11,7 @@ const mongoose = require("mongoose");
 const sellerRoutes = require("./routes/seller");
 const adminRoutes = require("./routes/admin");
 const apiRoutes = require("./routes/api");
+const otherRoutes = require("./routes/other");
 
 //create the express app
 const app = express();
@@ -43,10 +44,8 @@ app.set("views", __dirname + "/views");
 app.use("/seller", sellerRoutes);
 app.use("/admin", adminRoutes);
 app.use("/api", apiRoutes);
+app.use("/", otherRoutes);
 
-app.get("/", (req, res) => {
-    res.redirect("/seller");
-});
 //create the server
 const port = 3000 || process.env.PORT;
 app.listen(port, () => {

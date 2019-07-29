@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+    <head>
+            <meta charset="utf-8">
+            <title>Login</title>
+            <meta name="description" content="Junior makers program Login">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- importing needed libraries -->
+            <link rel="stylesheet" href="/css/lib/normalize.css">
+            <link rel="stylesheet" href="/css/lib/bootstrap/bootstrap.min.css">
+            <link rel="stylesheet" href="/css/lib/reset.min.css">
+            {{--  importing fonts  --}}
+
+            <!-- main CSS style sheet -->
+            <link rel="stylesheet" href="/css/login.css">
+    </head>
+    <body>
+        <div id="contain">
+            <div id="background_rounded">
+            </div>
+            <svg class="college-separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 123" version="1.1" preserveAspectRatio="none">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g transform="translate(0.000000, -148.000000)" fill="#FFFFFF"><path d="M0 271L0 151C346 221.165 792.769 261 1280 261 1767.231 261 2214 218.166 2560 148L2560 271 0 271Z"></path>
+                        </g>
+                    </g>
+            </svg>
+            
+            <div id="center_fillingInfosBox">
+                
+                <h2  style="z-index:5;">Login to <span>Dashboard</span></h2>
+                <form class="fillingInfosBox" action="/auth/login" method="POST">
+                    <p>Fill in your information</p>
+                        <div class="form-group">
+                                <label for="pwd">Nom :</label>
+                                <input type="text" class="form-control" id="email_login" name="email" required>
+                        </div>
+                        <div class="form-group">
+                                <label for="pwd">Password :</label>
+                                <input type="password" class="form-control" id="password_login" name="password" required>
+                        </div>
+                        <input type="submit" value="login" class="btn" id="submit-form">
+                    </form>
+            </div>
+        </div>
+    </body>
+</html>

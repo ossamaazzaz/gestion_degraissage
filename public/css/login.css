@@ -1,0 +1,343 @@
+/* ----- LOGIN ----- */
+#contain {
+    height: 300px;
+    width: 100vw;
+    position: relative;
+  }
+  #background_rounded {
+    background-color: #4f4f4f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .college-separator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    max-height: 150px;
+  }
+  
+  #background_rounded_image {
+    display: block;
+    top: 5vh;
+    left: 5vw;
+    position: absolute;
+  }
+  
+  #center_fillingInfosBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #center_fillingInfosBox h2 {
+    position: absolute;
+    font-family: Ubuntu, sans-serif;
+    z-index: 2;
+    font-weight: 600;
+    font-size: 33px;
+    top: 110px;
+    color: #e0e0e0;
+  }
+  #center_fillingInfosBox h2 span {
+    font-weight: 700;
+  }
+  .fillingInfosBox {
+    background: #fcfcfc;
+    width: 500px;
+    position: absolute;
+    top: 170px;
+    z-index: 2;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+  }
+  
+  .fillingInfosBox p {
+    font-family: Poppins;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 35px;
+  }
+  .fillingInfosBox .form-group {
+    margin-top: 27px;
+    margin-left: 18px;
+  }
+  .fillingInfosBox .form-group label {
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    padding-left: 5px;
+    margin-bottom: 7px;
+  }
+  .fillingInfosBox .form-group input {
+    width: 90%;
+    margin-left: 5px;
+  }
+  .fillingInfosBox .form-group textarea {
+    width: 90%;
+    margin-left: 5px;
+  }
+  
+  .fillingInfosBox .form-check {
+    margin-left: 23px;
+    margin-top: 38px;
+  }
+  .fillingInfosBox .form-group img {
+    height: 17px;
+    width: 17px;
+    margin-bottom: -2px;
+    margin-left: 3px;
+  }
+  
+  #profile {
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+  
+    z-index: 2;
+    margin-top: -65px;
+    margin-left: 178px;
+  }
+  #change_profile {
+    height: 30px;
+    width: 30 px;
+    margin-bottom: 17px;
+    margin-left: -30px;
+    margin-top: 10px;
+  }
+  
+  #rememberMe_checkBox {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .fillingInfosBox .form-check label {
+    margin-top: 9px;
+    margin-left: 12px;
+  }
+  
+  .fillingInfosBox #submit-form {
+    margin-left: 23px;
+    width: 87%;
+    background: #ffd32a;
+    margin-top: 38px;
+    height: 38px;
+    font-weight: 700;
+    font-size: 19px;
+  }
+  /* course card */
+  .course-card {
+    width: 250px;
+    height: 295px;
+    border-radius: 8px;
+    position: relative;
+  }
+  .course-card .course-img {
+    width: 248px;
+    height: 158px;
+  }
+  .course-card h5 {
+    margin-top: 10px;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .course-author-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+  .course-author {
+    width: 85px;
+    font-size: 12px;
+    text-align: center;
+  }
+  table tr td {
+    vertical-align: middle !important;
+    font-family: Poppins;
+  }
+  .course-card-content {
+    margin-top: 15px;
+  }
+  .td-space {
+    padding: 3px;
+  }
+  .td-devider {
+    border: 1px solid #696969;
+  }
+  .time-and-diff {
+    padding-left: 7px;
+    font-size: 14px;
+    text-align: center;
+  }
+  .course-state {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    font-family: Poppins;
+    text-align: center;
+    font-size: 17px;
+    display: table;
+    cursor: pointer;
+  }
+  .course-state:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+  }
+  .course-state p {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .course-start {
+    color: white;
+    background-color: #4bcffa;
+  }
+  .course-completed {
+    color: white;
+    background-color: #1dd1a1;
+  }
+  .course-resume {
+    color: #000;
+    background-color: #ffd32a;
+  }
+  #goToCourse{
+    width:100%;
+  }
+  #goToCourse:hover{
+    text-decoration: none;
+  }
+  /* user home page titles*/
+  .user-home-title {
+    font-weight: 500;
+    font-size: 20px;
+    font-family: Poppins;
+  }
+  #form_register_modify {
+    padding-left: 27px;
+  }
+  
+  input[name="firstName"] {
+    width: 200px !important;
+  }
+  input[name="lastName"] {
+    width: 200px !important;
+  }
+  .registerStarRequire {
+    color: #b34b4b;
+  }
+  
+  #loginFooter {
+    z-index: 2;
+  }
+  #loginFooter p {
+    font-size: 16px;
+  }
+  #loginFooter p a {
+    font-size: 16px;
+    color: #4f4f4f;
+    font-weight: bold;
+  }
+  
+  #loginFooter p a:hover,
+  .form-check a:hover {
+    color: #ffd32a;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .form-check a {
+    font-weight: bold;
+  }
+  
+  @media (max-width: 580px) {
+    .fillingInfosBox {
+      width: 100%;
+    }
+    .fillingInfosBox .form-group input {
+      width: 90%!important;
+    }
+    #form_register_modify {
+      padding-left: 15px;
+    }
+  }
+  
+  /* ------------- Profile  -------------- */
+  .profile_container {
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-left: 25px;
+  }
+  #profile-pic {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    float: right;
+    z-index: 2;
+    margin-top: 5px;
+  }
+  #profile_details {
+    /*override bootstrap*/
+    padding: 0;
+  }
+  #profile_details h1 {
+    margin-top: 17px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  #profile_details h6 {
+    margin-top: 7px;
+    color: #868686;
+  }
+  #profile_details p {
+    margin-top: 10px;
+    word-spacing: 2px;
+    color: #4b4b4b;
+  }
+  .ellipsis {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(233, 233, 233);
+    position: absolute;
+    right: 0;
+    box-shadow: 0 3px 6px rgba(122, 122, 122, 0.16),
+      0 3px 6px rgba(160, 158, 158, 0.23);
+  }
+  .ellipsis a:hover {
+    text-decoration: none;
+    color: #ffd32a;
+  }
+  .envelope i,
+  .ellipsis i {
+    font-size: 17px;
+  }
+  .profile_container ul li {
+    display: inline;
+    font-size: 21px;
+    margin: 2px;
+  }
+  .profile_container ul {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+  }
+  .fa-instagram:hover {
+    color: purple;
+  }
+  .fa-github-square:hover {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
