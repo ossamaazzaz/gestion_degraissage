@@ -58,15 +58,15 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav" style="margin-top: 40px;">
                     <ul id="sidebarnav" class="dark">
-                        <li class="active"> <a href="#"><i class="fa fa-tachometer"></i><span class="hide-menu">Accueil</span></a>
+                        <li class="active"> <a href="#"><i class="fa fa-home"></i><span class="hide-menu">Accueil</span></a>
                         </li>
-                        <li> <a href="/admin/products" ><i class="fa fa-user"></i><span class="hide-menu">Produits</span></a>
+                        <li> <a href="/admin/products" ><i class="fa fa-archive"></i><span class="hide-menu">Produits</span></a>
                         </li>
                         <li> <a href="/admin/orders"><i class="fa fa-shopping-bag"></i><span class="hide-menu">Commandes</span></a>
                         </li>
-                        <li> <a href="/admin/finance"><i class="fa fa-shopping-bag"></i><span class="hide-menu">Finance</span></a>
+                        <li> <a href="/admin/finance"><i class="fa fa-dollar"></i><span class="hide-menu">Finance</span></a>
                         </li>
-                        <li> <a href="/admin/logout"><i class="fa fa-shopping-bag"></i><span class="hide-menu">logout</span></a>
+                        <li> <a href="/admin/logout"><i class="fa fa-sign-out"></i><span class="hide-menu">logout</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -108,11 +108,9 @@
 
     <script src="/js/lib/owl-carousel/owl.carousel.min.js"></script>
     <script src="/js/lib/owl-carousel/owl.carousel-init.js"></script>
-    <script src="/Chart.min.js"></script>
     <script src="/js/scripts.js"></script>
     <!-- scripit init-->
 
-    <script src="js/custom.min.js"></script>
        <script type="text/javascript">
         
       $('.counter').each(function() {
@@ -135,24 +133,6 @@
 
       });  
     });
-        var ctxx = document.getElementById('users-chart').getContext('2d');
-      var chart = new Chart(ctxx, {
-          // The type of chart we want to create
-          type: 'line',
-          // The data for our dataset
-          data: {
-              labels: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet","Août","Septembre","Octobre","Novembre","Décembre"],
-              datasets: [{
-                  label: "Users registrations this year",
-                  backgroundColor: 'rgb(255, 99, 132)',
-                  borderColor: 'rgb(255, 99, 132)',
-                  data: [0, 10, 5, 2, 20, 30, 12,15, 10, 5, 2, 20, 30, 45],
-              }]
-          },
-          // Configuration options go here
-          options: {}
-      });
-     
     </script>
 
 </body>

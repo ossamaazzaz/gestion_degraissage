@@ -58,25 +58,25 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav" style="margin-top: 40px;">
                     <ul id="sidebarnav" class="dark">
-                        <li> <a href="/seller/create"><i class="fa fa-tachometer"></i><span class="hide-menu">Créer une commande</span></a>
+                        <li> <a href="/seller/create"><i class="fa fa-plus"></i><span class="hide-menu">Créer une commande</span></a>
                         </li>
                         <li 
                             @if(page == "to_prepare")
                             class="active"
                             @endif
-                        > <a href="/seller" ><i class="fa fa-user"></i><span class="hide-menu">à préparer</span></a>
+                        > <a href="/seller" ><i class="fa fa-asl-interpreting"></i><span class="hide-menu">à préparer</span></a>
                         </li>
                         <li
                             @if(page == "prepared")
                             class="active"
                             @endif
-                        > <a href="/seller/prepared"><i class="fa fa-shopping-bag"></i><span class="hide-menu">préparé</span></a>
+                        > <a href="/seller/prepared"><i class="fa fa-archive"></i><span class="hide-menu">préparé</span></a>
                         </li>
                         <li
                             @if(page == "recovered")
                             class="active"
                             @endif
-                        > <a href="/seller/recovered"><i class="fa fa-shopping-bag"></i><span class="hide-menu">recuperé</span></a>
+                        > <a href="/seller/recovered"><i class="fa fa-check-square-o"></i><span class="hide-menu">recuperé</span></a>
                         </li>
                     </ul>
                 </nav>
