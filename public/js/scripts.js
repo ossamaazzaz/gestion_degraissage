@@ -150,7 +150,6 @@ function deleteProduct(id) {
     });
 }
 var upModal = $("#update-product-modal");
-console.log(upModal.getElementsByTagName("input"));
 //update a product 
 function showUpdateModal(obj) {
     var tr = obj.parentNode.parentNode;
@@ -186,6 +185,7 @@ function makeRecovered(id) {
 }
 //delete order
 function deleteOrder(id) {
+    console.log(id);
     $.ajax({
         url: '/api/orders/' + id + '/delete',
         method: 'DELETE',

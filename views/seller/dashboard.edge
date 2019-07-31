@@ -43,13 +43,16 @@
                                    <td>
                                      <div class="btn btn-info">
                                        <i class="fa fa-database">
-                                         Détails
+                                         Outils
                                        </i>
                                      </div>  
                                    </td> 
                                    <td>
                                      <i class="fa fa-check" onclick="makePrepared('{{order._id}}')" 
                                         style="color: green; font-size: 24px;cursor: pointer;">
+                                    </i>
+                                    <i class="fa fa-times" onclick="deleteOrder('{{order._id}}')" 
+                                        style="color: red; font-size: 24px;cursor: pointer;">
                                     </i>
                                    </td> 
                                </tr>
