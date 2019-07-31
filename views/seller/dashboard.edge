@@ -1,0 +1,65 @@
+@layout('layouts.seller')
+
+@section('main')
+<div class="page-wrapper">
+  <div class="row page-titles">
+     <div class="col-md-5 align-self-center">
+         <h3 class="text-primary">Dashboard</h3> </div>
+     <div class="col-md-7 align-self-center">
+         <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+             <li class="breadcrumb-item active">orders</li>
+         </ol>
+     </div>
+ </div>
+<div class="card" style="margin: 10px;">
+               <div class="card-title">
+                   <h2 style="text-align: center;">Les commandes:</h2>
+               </div>
+               <div class="card-body">
+                   <div class="table-responsive">
+                       <table class="table">
+                           <thead>
+                               <tr>
+                                   <th>ID</th>
+                                   <th>Date</th>
+                                   <th>Nom</th>
+                                   <th>Totale</th>
+                                   <th>Payé</th>
+                                   <th>à payé</th>
+                                   <th>Détail</th>
+                                   <th>confirmer</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                             @each(order in orders)
+                               <tr>
+                                   <td>{{order._id}}</td>
+                                   <td>{{order.created_at.toLocaleString()}}</td>
+                                   <td>{{order.name}}</td>
+                                   <td>{{order.price}}</td>
+                                   <td>{{order.paid}}</td>  
+                                   <td>{{order.toPay}}</td>  
+                                   <td>
+                                     <div class="btn btn-info">
+                                       <i class="fa fa-database">
+                                         Détails
+                                       </i>
+                                     </div>  
+                                   </td> 
+                                   <td>
+                                     <i class="fa fa-check" onclick="makePrepared({{order._id}})" 
+                                        style="color: green; font-size: 24px;cursor: pointer;">
+                                    </i>
+                                   </td> 
+                               </tr>
+                            @endeach
+
+                           </tbody>
+                       </table>
+                   </div>
+               </div>
+              </div>
+</div>
+</div>
+@endsection
