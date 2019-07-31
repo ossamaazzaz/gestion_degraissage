@@ -4,5 +4,5 @@ mongoose.connect("mongodb://localhost/degraissage", { useNewUrlParser: true });
 
 module.exports = async (req, res) => {
     const orders = await Order.find({ state: "prepared" });
-    res.render("seller.prepared", { orders });
+    res.render("seller.prepared", { orders, page: "prepared" });
 }
