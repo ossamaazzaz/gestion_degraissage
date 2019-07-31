@@ -3,6 +3,6 @@ const Order = require("../../models/Order");
 mongoose.connect("mongodb://localhost/degraissage", { useNewUrlParser: true });
 
 module.exports = async (req, res) => {
-    const orders = await Order.find({ state: "prepared" });
-    res.render("seller.prepared", { orders });
+    await Order.updateOne({ _id: req.params.id }, { state: "recovered" });
+    res.send({ success: true });
 }

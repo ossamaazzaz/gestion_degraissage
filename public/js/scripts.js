@@ -169,7 +169,16 @@ function makePrepared(id) {
     $.ajax({
         url: '/api/orders/' + id + '/make/prepared',
         method: 'PUT',
-        contentType: 'application/json',
+        success: function (result) {
+            location.reload();
+        }
+    });
+}
+
+function makeRecovered(id) {
+    $.ajax({
+        url: '/api/orders/' + id + '/make/recovered',
+        method: 'PUT',
         success: function (result) {
             location.reload();
         }
