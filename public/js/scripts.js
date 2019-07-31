@@ -163,3 +163,15 @@ function showUpdateModal(obj) {
     document.getElementById("update-id").value = id;
     showModal("update-product-modal");
 }
+
+function makePrepared(id) {
+    console.log(id);
+    $.ajax({
+        url: '/api/orders/' + id + '/make/prepared',
+        method: 'PUT',
+        contentType: 'application/json',
+        success: function (result) {
+            location.reload();
+        }
+    });
+}
