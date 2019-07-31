@@ -184,3 +184,13 @@ function makeRecovered(id) {
         }
     });
 }
+//delete order
+function deleteOrder(id) {
+    $.ajax({
+        url: '/api/orders/' + id + '/delete',
+        method: 'DELETE',
+        success: function (result) {
+            location.reload();
+        }
+    });
+}
