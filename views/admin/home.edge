@@ -27,8 +27,8 @@
                                 <span><i class="fa fa-usd f-s-40 color-primary"></i></span>
                             </div>
                             <div class="media-body media-text-right">
-                                <h2><div class="counter" data-count="568120">0</div></h2>
-                                <p class="m-b-0">Total Revenue</p>
+                                <h2><div class="counter" data-count="{{money}}">0</div></h2>
+                                <p class="m-b-0">Revenue Totale</p>
                             </div>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
                                 <span><i class="fa fa-shopping-cart f-s-40 color-success"></i></span>
                             </div>
                             <div class="media-body media-text-right">
-                                <h2><div class="counter" data-count="1178">0</div></h2>
-                                <p class="m-b-0">Completed orders</p>
+                                <h2><div class="counter" data-count="{{restored}}">0</div></h2>
+                                <p class="m-b-0">récuperé</p>
                             </div>
                         </div>
                     </div>
@@ -53,8 +53,8 @@
                                 <span><i class="fa fa-archive f-s-40 color-warning"></i></span>
                             </div>
                             <div class="media-body media-text-right">
-                                <h2><div class="counter" data-count="25">0</div></h2>
-                                <p class="m-b-0">Total products</p>
+                                <h2><div class="counter" data-count="{{prepared}}">0</div></h2>
+                                <p class="m-b-0">Préparé</p>
                             </div>
                         </div>
                     </div>
@@ -66,29 +66,23 @@
                                 <span><i class="fa fa-user f-s-40 color-danger"></i></span>
                             </div>
                             <div class="media-body media-text-right">
-                                <h2><div class="counter" data-count="847">0</div></h2>
-                                <p class="m-b-0">Total users</p>
+                                <h2><div class="counter" data-count="{{toPrepare}}">0</div></h2>
+                                <p class="m-b-0">A préparer</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white m-l-0 m-r-0 box-shadow ">
+            <div class="row">
+                <div class="col-lg-4">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Extra Area Chart</h4>
-                            <canvas id="users-chart"></canvas>
+                            <div class="year-calendar"></div>
                         </div>
                     </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="card">
-                        <h3>Top 5 products</h3>
-                    </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-8">
                     <div class="card">
                         <div class="card-title">
                             <h4>Recent Orders </h4>
@@ -98,59 +92,29 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Name</th>
-                                            <th>Product</th>
-                                            <th>quantity</th>
+                                            <th>Nom</th>
+                                            <th>Téléphone</th>
+                                            <th>Totale</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        @each(order in orders)
                                         <tr>
+                                            <td>{{order.name}}</td>
+                                            <td><span>{{order.phone}}</span></td>
+                                            <td><span>{{order.price}}</span></td>
                                             <td>
-                                                <div class="round-img">
-                                                    <a href=""><img src="images/avatar/4.jpg" alt=""></a>
-                                                </div>
+                                                @if(order.state == 'to_prepare')
+                                                    <span class="badge badge-danger">a préparer</span>
+                                                @elseif(order.state == 'prepared')
+                                                    <span class="badge badge-warning">préparé</span>
+                                                @else
+                                                    <span class="badge badge-success">récuperé</span>
+                                                @endif
                                             </td>
-                                            <td>John Abraham</td>
-                                            <td><span>iBook</span></td>
-                                            <td><span>456 pcs</span></td>
-                                            <td><span class="badge badge-success">Done</span></td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="round-img">
-                                                    <a href=""><img src="images/avatar/2.jpg" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td>John Abraham</td>
-                                            <td><span>iPhone</span></td>
-                                            <td><span>456 pcs</span></td>
-                                            <td><span class="badge badge-success">Done</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="round-img">
-                                                    <a href=""><img src="images/avatar/3.jpg" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td>John Abraham</td>
-                                            <td><span>iMac</span></td>
-                                            <td><span>456 pcs</span></td>
-                                            <td><span class="badge badge-warning">Pending</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="round-img">
-                                                    <a href=""><img src="images/avatar/4.jpg" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td>John Abraham</td>
-                                            <td><span>iBook</span></td>
-                                            <td><span>456 pcs</span></td>
-                                            <td><span class="badge badge-success">Done</span></td>
-                                        </tr>
+                                        @endeach
                                     </tbody>
                                 </table>
                             </div>
@@ -158,86 +122,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="row">
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-title">
-                                <h4>Recent comments </h4>
-                            </div>
-                            <div class="recent-comment">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="#"><img alt="..." src="images/avatar/1.jpg" class="media-object"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">john doe</h4>
-                                        <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                        <p class="comment-date">October 21, 2018</p>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="#"><img alt="..." src="images/avatar/1.jpg" class="media-object"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">john doe</h4>
-                                        <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                        <p class="comment-date">October 21, 2018</p>
-                                    </div>
-                                </div>
-
-                                <div class="media">
-                                    <div class="media-left">
-                                        <a href="#"><img alt="..." src="images/avatar/1.jpg" class="media-object"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">john doe</h4>
-                                        <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                        <p class="comment-date">October 21, 2018</p>
-                                    </div>
-                                </div>
-
-                                <div class="media no-border">
-                                    <div class="media-left">
-                                        <a href="#"><img alt="..." src="images/avatar/1.jpg" class="media-object"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Mr. Michael</h4>
-                                        <p>Cras sit amet nibh libero, in gravida nulla. </p>
-                                        <div class="comment-date">October 21, 2018</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /# card -->
-                    </div>
-                    <!-- /# column -->
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="year-calendar"></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            cardknlk
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
 
             <!-- End PAge Content -->
         </div>

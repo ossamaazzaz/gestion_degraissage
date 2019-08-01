@@ -15,7 +15,7 @@ const financeOperationController = require("../controllers/admin/financeOperatio
 //require middleware
 const isAdmin = require("../middleware/isAdmin");
 //handling requests 
-router.get("/", isAdmin, homeController);
+router.get("/", homeController);
 router.get("/products", isAdmin, productsController);
 router.get("/orders", isAdmin, ordersController);
 router.post("/products/add", isAdmin, addProductController);

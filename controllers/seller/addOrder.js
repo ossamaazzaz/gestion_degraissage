@@ -5,6 +5,9 @@ const Finance = require("../../models/finance");
 mongoose.connect("mongodb://localhost/degraissage", { useNewUrlParser: true });
 
 module.exports = async (req, res) => {
+    if (req.body.paid == "") {
+        req.body.paid = 0
+    }
     req.body.toPay = parseInt(req.body.price) - parseInt(req.body.paid);
     req.body.state = "to_prepare";
     let info = await Info.findOne({});
