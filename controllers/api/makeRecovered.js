@@ -8,7 +8,11 @@ module.exports = async (req, res) => {
     let info = await Info.findOne({});
     let allMoney = parseInt(info.money);
     let order = await Order.findOne({ _id: req.params.id });
-    await Order.updateOne({ _id: req.params.id }, { state: "recovered" });
+    await Order.updateOne({ _id: req.params.id },
+        {
+            state: "recovered",
+            restored_at: new Date()
+        });
     allMoney += parseInt(order.toPay);
     await Info.updateOne({ _id: info._id }, { money: allMoney });
     await Finance.create({

@@ -22,7 +22,7 @@
                            <thead>
                                <tr>
                                    <th>ID</th>
-                                   <th>Date</th>
+                                   <th>Date de préparation</th>
                                    <th>Nom</th>
                                    <th>Totale</th>
                                    <th>Payé</th>
@@ -35,7 +35,7 @@
                              @each(order in orders)
                                <tr>
                                    <td>{{order._id}}</td>
-                                   <td>{{order.created_at.toLocaleString()}}</td>
+                                   <td>{{order.ready_at.toLocaleString()}}</td>
                                    <td>{{order.name}}</td>
                                    <td>{{order.price}}</td>
                                    <td>{{order.paid}}</td>  

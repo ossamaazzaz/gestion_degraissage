@@ -58,13 +58,29 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav" style="margin-top: 40px;">
                     <ul id="sidebarnav" class="dark">
-                        <li class="active"> <a href="#"><i class="fa fa-home"></i><span class="hide-menu">Accueil</span></a>
+                        <li 
+                            @if(page == "home")
+                            class="active"
+                            @endif
+                        > <a href="/admin"><i class="fa fa-home"></i><span class="hide-menu">Accueil</span></a>
                         </li>
-                        <li> <a href="/admin/products" ><i class="fa fa-archive"></i><span class="hide-menu">Produits</span></a>
+                        <li
+                        @if(page == "products")
+                        class="active"
+                        @endif
+                        > <a href="/admin/products" ><i class="fa fa-archive"></i><span class="hide-menu">Produits</span></a>
                         </li>
-                        <li> <a href="/admin/orders"><i class="fa fa-shopping-bag"></i><span class="hide-menu">Commandes</span></a>
+                        <li
+                        @if(page == "orders")
+                        class="active"
+                        @endif
+                        > <a href="/admin/orders"><i class="fa fa-shopping-bag"></i><span class="hide-menu">Commandes</span></a>
                         </li>
-                        <li> <a href="/admin/finance"><i class="fa fa-dollar"></i><span class="hide-menu">Finance</span></a>
+                        <li
+                        @if(page == "finance")
+                        class="active"
+                        @endif
+                        > <a href="/admin/finance"><i class="fa fa-dollar"></i><span class="hide-menu">Finance</span></a>
                         </li>
                         <li> 
                             <a href="/admin/logout">
