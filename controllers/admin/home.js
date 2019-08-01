@@ -5,7 +5,7 @@ mongoose.connect("mongodb://localhost/degraissage", { useNewUrlParser: true });
 
 module.exports = async (req, res) => {
     let info = await Info.findOne({});
-    let orders = await Order.find({}).limit(6);
+    let orders = await Order.find({}).limit(7);
     let toPrepare = await Order.find({ state: "to_prepare" });
     let prepared = await Order.find({ state: "prepared" });
     let restored = await Order.find({ state: "recovered" });

@@ -15,10 +15,11 @@ module.exports = async (req, res) => {
     allMoney += parseInt(req.body.paid);
     await Info.updateOne({ _id: info._id }, { money: allMoney })
     let order = await Order.create(req.body);
-    await Finance.create({
-        sign: "+",
-        money: req.body.paid,
-        cause: "Client a payé lorsque il pose la commande: " + order.id
-    });
+    if (parseInt(req.body.paid) > 0)
+        await Finance.create({
+            sign: "+",
+            money: req.body.paid,
+            cause: "Client a payé lorsque il pose la commande: " + order.id
+        });
     res.redirect("/");
 }

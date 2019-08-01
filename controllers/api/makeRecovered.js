@@ -15,10 +15,11 @@ module.exports = async (req, res) => {
         });
     allMoney += parseInt(order.toPay);
     await Info.updateOne({ _id: info._id }, { money: allMoney });
-    await Finance.create({
-        sign: "+",
-        money: order.toPay,
-        cause: "Client a payé lorsque il a récuperer la commande: " + order.id
-    });
+    if (parseInt(order.toPay) > 0)
+        await Finance.create({
+            sign: "+",
+            money: order.toPay,
+            cause: "Client a payé lorsque il a récuperer la commande: " + order.id
+        });
     res.send({ success: true });
 }
