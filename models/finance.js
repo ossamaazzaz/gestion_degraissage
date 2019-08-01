@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const financeSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now },
     cause: String,
-    Sign: String,
+    sign: String,
     money: Number
 });
 

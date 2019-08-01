@@ -13,6 +13,9 @@
      </div>
  </div>
 <div class="card" style="margin: 10px;">
+        <div class="btn btn-success" 
+            onclick="showModal('finance-modal')">
+            <i class="fa fa-plus"></i> Ajouter</div>
                <div class="card-title">
                    <h2 style="text-align: center;">Flux d'argent:</h2>
                </div>
@@ -41,4 +44,35 @@
               </div>
 </div>
 </div>
+
+<div id="finance-modal">
+        <form class="info-container" method="POST" action="/admin/finance">
+            <span class="close-product-modal" onclick="hideModal('finance-modal')">&times;</span>
+            <h2>Operation:</h2>
+            <hr>
+            <br>
+            <input type="hidden" name="id" id="update-id">
+            <div class="form-group">
+                <label class="category-form-text">Sign</label>
+                <select name="sign" class="form-control" required>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="category-form-text">Montant</label>
+                <input type="number" class="form-control"
+                name="money" placeholder="Entrer un prix" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="title" class="category-form-text">Cause</label>
+                <textarea name="cause" style="height: 90px;" class="form-control" required></textarea>
+            </div>
+            <div style="width: 100%; margin-top: 15px;">
+                <input type="submit" class="btn btn-success" value="Ajouter">
+            </div>
+        </form>
+    </div>
 @endsection
