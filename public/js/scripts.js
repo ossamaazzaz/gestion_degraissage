@@ -194,3 +194,19 @@ function deleteOrder(id) {
         }
     });
 }
+//search in table
+function searchInTable(val) {
+    if (val == "") {
+        $("tbody tr").show();
+    } else {
+        var trs = document.getElementsByTagName("tr");
+        for (let i = 1; i < trs.length; i++) {
+            let name = trs[i].children[0].innerHTML.toLowerCase();
+            if (!name.includes(val.toLowerCase())) {
+                $(trs[i]).hide();
+            } else {
+                $(trs[i]).show();
+            }
+        }
+    }
+}
