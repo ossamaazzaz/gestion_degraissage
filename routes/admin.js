@@ -10,6 +10,7 @@ const deleteProductController = require("../controllers/admin/deleteProduct");
 const updateProductController = require("../controllers/admin/updateProduct");
 const logoutController = require("../controllers/logout");
 const financeController = require("../controllers/admin/finance");
+const financeOperationController = require("../controllers/admin/financeOperation");
 
 //require middleware
 const isAdmin = require("../middleware/isAdmin");
@@ -22,5 +23,6 @@ router.delete("/products/delete/:id", isAdmin, deleteProductController);
 router.post("/products/update", isAdmin, updateProductController);
 router.get("/logout", logoutController);
 router.get("/finance", isAdmin, financeController);
+router.post("/finance", isAdmin, financeOperationController);
 
 module.exports = router;

@@ -31,12 +31,14 @@
                                </tr>
                            </thead>
                            <tbody>
+                               @each(op in operations)
                                <tr>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
-                                   <td></td>
+                                   <td>{{op.date.toLocaleString()}}</td>
+                                   <td>{{op.cause}}</td>
+                                   <td>{{op.sign}}</td>
+                                   <td>{{op.money}}</td>
                                </tr>
+                               @endeach
                            </tbody>
                        </table>
                    </div>
