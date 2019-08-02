@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Bon de commande</title>
+  <link rel="stylesheet" href="/css/order.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<body>
+  <header>
+    <h1>Bon
+      <h2>{{order.name}}</h2>
+    </h1>
+  </header>
+  <section class="flex">
+    <dl>
+      <dt>Commande #</dt>
+      <dd>{{order._id}}</dd>
+      <dt>Date de création</dt>
+      <dd>{{order.created_at.toLocaleString()}}</dd>
+    </dl>
+  </section>
+  <section class="flex">
+    <dl class="bloc">
+      <dt>Text ajouter:</dt>
+      <dd>
+        Il est interdit de<br>
+        bla bla bla <br>
+        some text in here
+        <dl>
+          <dt>Attn</dt>
+          <dd>AZZAZ-RAHMANI Tahar</dd>
+          <dt>Téléphone</dt>
+          <dd>0782763349</dd>
+          <dt>Courriel</dt>
+          <dd>tahar_azzaz@gmail.com</dd>
+        </dl>
+      </dd>
+    </dl>
+    <dl class="bloc">
+      <dt>Argent payé:</dt>
+      <dd>{{order.paid}} DZD</dd>
+      <dt>Argent à payé:</dt>
+      <dd>{{order.toPay}} DZD</dd>
+    </dl>
+  </section>
+  <table>
+    <thead>
+      <tr> 
+        <th>Nom</th>
+        <th>Quantité</th>
+        <th>Type</th>
+        <th>Prix</th>
+        <th>Totale</th>
+      </tr>
+    </thead>
+    <tbody>
+        @each(item in content)
+        <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.prix}}&#8202;DZD</td>
+            <td>{{item.totale}}&#8202;DZD</td>
+        </tr>
+        @endeach
+    </tbody>
+    <tfoot>
+      <tr> 
+        <td colspan="3"></td>
+        <td>Total:</td>
+        <td>{{order.price}}&#8202;DZD</td>
+      </tr>
+    </tfoot>
+  </table>
+  <footer>
+    <p>Some text in here | <a href="#">lien vers</a></p>
+    <p>Adresse + téléphone + email</p>
+  </footer>
+</body>
+<!-- partial -->
+  
+</body>
+</html>

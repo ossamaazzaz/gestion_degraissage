@@ -43,11 +43,11 @@
                                    <td>{{order.paid}}</td>  
                                    <td>{{order.toPay}}</td>  
                                    <td>
-                                     <div class="btn btn-info">
+                                     <a href="/order/{{order._id}}" class="btn btn-info">
                                        <i class="fa fa-database">
                                          Détail
                                        </i>
-                                     </div>  
+                                     </a>  
                                    </td> 
                                    <td>
                                      <i class="fa fa-check" onclick="makePrepared('{{order._id}}')" 

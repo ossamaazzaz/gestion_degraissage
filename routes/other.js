@@ -3,6 +3,7 @@ const router = express.Router();
 
 //require controllers
 const loginController = require("../controllers/login");
+const orderController = require("../controllers/order");
 
 //require middleware
 
@@ -14,5 +15,6 @@ router.get("/", (req, res) => {
     res.redirect("/seller/create");
 });
 router.post("/auth/login", loginController);
+router.get("/order/:id", orderController);
 
 module.exports = router;
