@@ -21,5 +21,5 @@ module.exports = async (req, res) => {
             money: req.body.paid,
             cause: "Client a payé lorsque il pose la commande: " + order.id
         });
-    res.redirect("/");
+    res.redirect("/order/" + order._id);
 }
